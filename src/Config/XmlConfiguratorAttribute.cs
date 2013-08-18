@@ -313,7 +313,7 @@ namespace log4net.Config
 		/// <param name="configFile">the FileInfo pointing to the config file</param>
 		private void ConfigureFromFile(ILoggerRepository targetRepository, FileInfo configFile)
 		{
-#if (SSCLI)
+#if (SSCLI || MONO_IOS)
 			if (m_configureAndWatch)
 			{
 				LogLog.Warn(declaringType, "XmlConfiguratorAttribute: Unable to watch config file not supported on SSCLI");

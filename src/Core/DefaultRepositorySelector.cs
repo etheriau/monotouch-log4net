@@ -724,6 +724,7 @@ namespace log4net.Core
                                     }
 #endif
 
+#if !MONO_IOS
 					if (watchRepositoryConfigFile)
 					{
  						// As we are going to watch the config file it is required to resolve it as a 
@@ -749,6 +750,7 @@ namespace log4net.Core
 						}
 					}
 					else
+#endif
 					{
                     // As we are not going to watch the config file it is easiest to just resolve it as a 
 					// URI and pass that to the Configurator
