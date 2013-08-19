@@ -25,6 +25,11 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Collections;
 
+#if MONO_IOS
+using System.Linq;
+using MonoTouch.Foundation;
+#endif
+
 namespace log4net.Util
 {
 	/// <summary>
@@ -149,6 +154,16 @@ namespace log4net.Util
 #endif
 			}
 		}
+
+#if MONO_IOS
+		public static string ApplicationCachesDirectory
+		{
+			get
+			{
+				return NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User).FirstOrDefault() ?? "";
+			}
+		}
+#endif
 
 		/// <summary>
 		/// Gets the path to the configuration file for the current <see cref="AppDomain"/>.

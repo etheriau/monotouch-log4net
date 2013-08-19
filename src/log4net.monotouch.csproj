@@ -233,6 +233,8 @@
     <Compile Include="Appender\IBulkAppender.cs" />
     <Compile Include="Appender\MemoryAppender.cs" />
     <Compile Include="Appender\TextWriterAppender.cs" />
+    <Compile Include="Appender\FileAppender.cs" />
+    <Compile Include="Appender\RollingFileAppender.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Util\" />

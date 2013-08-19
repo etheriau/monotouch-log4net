@@ -1303,7 +1303,11 @@ namespace log4net.Appender
 		/// </remarks>
 		protected static string ConvertToFullPath(string path)
 		{
+#if MONO_IOS
+			return Path.Combine(SystemInfo.ApplicationCachesDirectory, path);
+#else
 			return SystemInfo.ConvertToFullPath(path);
+#endif
 		}
 
 		#endregion Protected Static Methods
