@@ -235,6 +235,7 @@
     <Compile Include="Appender\TextWriterAppender.cs" />
     <Compile Include="Appender\FileAppender.cs" />
     <Compile Include="Appender\RollingFileAppender.cs" />
+    <Compile Include="Appender\LocalSyslogAppender.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Util\" />
