@@ -236,6 +236,8 @@
     <Compile Include="Appender\FileAppender.cs" />
     <Compile Include="Appender\RollingFileAppender.cs" />
     <Compile Include="Appender\LocalSyslogAppender.cs" />
+    <Compile Include="Appender\UdpAppender.cs" />
+    <Compile Include="Appender\RemoteSyslogAppender.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Util\" />
