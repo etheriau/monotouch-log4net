@@ -1,7 +1,7 @@
-monotouch-log4net
+monotouch-log4net / log4net for Xamarin Unified IOS
 ====================
 
-Finally, Apache log4net made to run on MonoTouch iOS. It's a work in progress, alpha quality code base. Please help me by reporting and fixing bugs!
+Finally, Apache log4net made to run on MonoTouch iOS and Xamarin's Unified IOS builds. It's a work in progress, alpha quality code base. Please help me by reporting and fixing bugs!
 
 Because MonoTouch doesn't support System.Configuration, you must use a plain xml configuration file, and include it as a bundled resource. The file watch feature is also removed. Lastly, the following appenders are working.
 
