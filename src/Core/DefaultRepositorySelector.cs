@@ -724,7 +724,7 @@ namespace log4net.Core
                                     }
 #endif
 
-#if !MONO_IOS
+#if !MONO_IOS && !XAMARIN_MAC
 					if (watchRepositoryConfigFile)
 					{
  						// As we are going to watch the config file it is required to resolve it as a 

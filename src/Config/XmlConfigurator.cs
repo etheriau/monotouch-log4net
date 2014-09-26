@@ -162,7 +162,7 @@ namespace log4net.Config
 				LogLog.Debug(declaringType, "Application config file location unknown");
 			}
 
-#if NETCF || MONO_IOS
+#if NETCF || MONO_IOS || XAMARIN_MAC
 			// No config file reading stuff. Just go straight for the file
 			Configure(repository, new FileInfo(SystemInfo.ConfigurationFileLocation));
 #else
@@ -785,7 +785,7 @@ namespace log4net.Config
 
 		#region ConfigureAndWatch static methods
 
-#if (!NETCF && !SSCLI && !MONO_IOS)
+#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC)
 
 		/// <summary>
 		/// Configures log4net using the file specified, monitors the file for changes 
@@ -906,7 +906,7 @@ namespace log4net.Config
 
 		#region ConfigureAndWatchHandler
 
-#if (!NETCF && !SSCLI && !MONO_IOS)
+#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC)
 		/// <summary>
 		/// Class used to watch config files.
 		/// </summary>

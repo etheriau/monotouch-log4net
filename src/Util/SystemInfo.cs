@@ -951,7 +951,7 @@ namespace log4net.Util
 		{
 			try
 			{
-#if NETCF || MONO_IOS
+#if NETCF || MONO_IOS || XAMARIN_MAC
 				// Configuration APIs are not suported under the Compact Framework
 #elif NET_2_0
 				return ConfigurationManager.AppSettings[key];
@@ -1030,7 +1030,7 @@ namespace log4net.Util
 		{
 #if NETCF_1_0
 			return new Hashtable(CaseInsensitiveHashCodeProvider.Default, CaseInsensitiveComparer.Default);
-#elif NETCF_2_0 || NET_2_0 || MONO_2_0 || MONO_IOS
+#elif NETCF_2_0 || NET_2_0 || MONO_2_0 || MONO_IOS || XAMARIN_MAC
 			return new Hashtable(StringComparer.OrdinalIgnoreCase);
 #else
 			return System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable();
