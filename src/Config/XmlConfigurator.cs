@@ -56,7 +56,7 @@ namespace log4net.Config
 
 		#region Configure static methods
 
-#if !NETCF && !MONO_IOS
+#if !NETCF && !MONO_IOS && !XAMARIN_ANDROID
 		/// <summary>
 		/// Automatically configures the log4net system based on the 
 		/// application's configuration settings.
@@ -97,7 +97,7 @@ namespace log4net.Config
             return Configure(LogManager.GetRepository(Assembly.GetCallingAssembly()));
         }
 
-#if !NETCF && !MONO_IOS
+#if !NETCF && !MONO_IOS && !XAMARIN_ANDROID
         /// <summary>
         /// Automatically configures the <see cref="ILoggerRepository"/> using settings
         /// stored in the application's configuration file.
@@ -162,7 +162,7 @@ namespace log4net.Config
 				LogLog.Debug(declaringType, "Application config file location unknown");
 			}
 
-#if NETCF || MONO_IOS || XAMARIN_MAC
+#if NETCF || MONO_IOS || XAMARIN_MAC || XAMARIN_ANDROID
 			// No config file reading stuff. Just go straight for the file
 			Configure(repository, new FileInfo(SystemInfo.ConfigurationFileLocation));
 #else
@@ -254,7 +254,7 @@ namespace log4net.Config
             return configurationMessages;
 		}
 
-#if !NETCF && !MONO_IOS
+#if !NETCF && !MONO_IOS && !XAMARIN_ANDROID
 		/// <summary>
 		/// Configures log4net using the specified configuration file.
 		/// </summary>
@@ -413,7 +413,7 @@ namespace log4net.Config
             return configurationMessages;
 		}
 
-#if !NETCF && !MONO_IOS
+#if !NETCF && !MONO_IOS && !XAMARIN_ANDROID
 
         /// <summary>
         /// Configures the <see cref="ILoggerRepository"/> using the specified configuration 
@@ -785,7 +785,7 @@ namespace log4net.Config
 
 		#region ConfigureAndWatch static methods
 
-#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC)
+#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC && !XAMARIN_ANDROID)
 
 		/// <summary>
 		/// Configures log4net using the file specified, monitors the file for changes 
@@ -906,7 +906,7 @@ namespace log4net.Config
 
 		#region ConfigureAndWatchHandler
 
-#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC)
+#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC && !XAMARIN_ANDROID)
 		/// <summary>
 		/// Class used to watch config files.
 		/// </summary>

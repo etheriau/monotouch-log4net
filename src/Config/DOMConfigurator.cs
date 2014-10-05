@@ -287,7 +287,7 @@ namespace log4net.Config
 
 		#region ConfigureAndWatch static methods
 
-#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC)
+#if (!NETCF && !SSCLI && !MONO_IOS && !XAMARIN_MAC && !XAMARIN_ANDROID)
 
 		/// <summary>
 		/// Configures log4net using the file specified, monitors the file for changes 

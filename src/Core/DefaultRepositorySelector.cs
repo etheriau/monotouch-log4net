@@ -23,7 +23,6 @@
 
 using System;
 using System.Collections;
-using System.Configuration;
 using System.IO;
 using System.Reflection;
 
@@ -724,7 +723,7 @@ namespace log4net.Core
                                     }
 #endif
 
-#if !MONO_IOS && !XAMARIN_MAC
+#if !MONO_IOS && !XAMARIN_MAC && !XAMARIN_ANDROID
 					if (watchRepositoryConfigFile)
 					{
  						// As we are going to watch the config file it is required to resolve it as a 

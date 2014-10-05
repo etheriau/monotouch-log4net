@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections;
-using System.Configuration;
 using System.Diagnostics;
 
 namespace log4net.Util
@@ -161,7 +160,7 @@ namespace log4net.Util
 		/// </remarks>
 		static LogLog()
 		{
-#if !NETCF
+#if !NETCF && !XAMARIN_ANDROID
 			try
 			{
 				InternalDebugging = OptionConverter.ToBoolean(SystemInfo.GetAppSetting("log4net.Internal.Debug"), false);

@@ -68,7 +68,7 @@ namespace log4net.Util.PatternStringConverters
 		{
 			CompositeProperties compositeProperties = new CompositeProperties();
 
-#if !NETCF && !MONO_IOS
+#if !NETCF && !MONO_IOS && !XAMARIN_ANDROID
 			PropertiesDictionary logicalThreadProperties = LogicalThreadContext.Properties.GetProperties(false);
 			if (logicalThreadProperties != null)
 			{
